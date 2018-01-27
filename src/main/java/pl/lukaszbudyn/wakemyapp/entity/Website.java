@@ -1,7 +1,5 @@
 package pl.lukaszbudyn.wakemyapp.entity;
 
-import java.net.URL;
-
 public class Website {
 	String name;
 	String stringUrl;
