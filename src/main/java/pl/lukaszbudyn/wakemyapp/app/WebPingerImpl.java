@@ -4,8 +4,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import pl.lukaszbudyn.wakemyapp.entity.Website;
 
+@Component
 public class WebPingerImpl implements WebPinger {
  
 	@Override

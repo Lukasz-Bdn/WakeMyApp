@@ -1,13 +1,10 @@
 package pl.lukaszbudyn.wakemyapp.scheduler;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import pl.lukaszbudyn.wakemyapp.app.WebPinger;
-import pl.lukaszbudyn.wakemyapp.app.WebPingerImpl;
 import pl.lukaszbudyn.wakemyapp.entity.Website;
 import pl.lukaszbudyn.wakemyapp.repository.WebsiteRepository;
 
@@ -15,7 +12,7 @@ import pl.lukaszbudyn.wakemyapp.repository.WebsiteRepository;
 public class WebPingerScheduler {
 
 	@Autowired
-	WebPinger webPinger = new WebPingerImpl();
+	WebPinger webPinger;
 	@Autowired
 	WebsiteRepository websiteRepo;
 	
