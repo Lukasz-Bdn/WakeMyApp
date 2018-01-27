@@ -16,7 +16,7 @@ public class WebPingerScheduler {
 	@Autowired
 	WebsiteRepository websiteRepo;
 	
-	@Scheduled(cron="0/20 * * * * ?")
+	@Scheduled(cron="0 1 * * * ?")
 	public void pingEvery29Minutes() {
 //		List<Website> websites = websiteRepo.findAll();
 //		webPinger.pingAllWebsites(websites);

@@ -12,9 +12,7 @@ public class HomeController {
 	
 	@GetMapping("/")
 	public String home() {
-		Website website = new Website("heroku", "https://spare-part-mgr.herokuapp.com/");
-		WebPinger webPinger = new WebPingerImpl();
-		webPinger.pingOneWebsite(website);
-		return "index";
+		return "home/home";
 	}
+
 }

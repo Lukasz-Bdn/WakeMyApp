@@ -10,7 +10,7 @@ import pl.lukaszbudyn.wakemyapp.entity.Website;
 
 @Component
 public class WebPingerImpl implements WebPinger {
- 
+	 
 	@Override
 	public void pingAllWebsites(List<Website> websites) {
 		for (Website website : websites) {
@@ -29,4 +29,5 @@ public class WebPingerImpl implements WebPinger {
 			e.printStackTrace();
 		}
 	}
+
 }
