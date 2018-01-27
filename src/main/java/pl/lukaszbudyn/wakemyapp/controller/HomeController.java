@@ -1,8 +1,5 @@
 package pl.lukaszbudyn.wakemyapp.controller;
 
-import java.time.LocalTime;
-
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
