@@ -52,6 +52,7 @@ public class HomeController {
 			return "home/register";
 		}
 		user.setEnabled(true);
+		user.setUserRole("ROLE_USER");
 		this.userRepo.save(user);
 		return "redirect:/login";
 	}
