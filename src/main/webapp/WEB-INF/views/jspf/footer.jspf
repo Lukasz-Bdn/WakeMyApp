@@ -1,3 +1,5 @@
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+<footer class="footer">
+	<div class="container">
+		<span class="text-muted">@Lukasz Budyn (2018), lukaszbudyn.pl</span>
+	</div>
 </footer>

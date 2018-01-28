@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -29,6 +30,8 @@ public class User {
 	@NotEmpty
 	@Size(min=5, max=60)
 	private String password;
+	@Transient
+	private String confirmPassword;
 	private boolean enabled;
 	private String userRole;
 	@OneToMany(mappedBy="user")
@@ -83,6 +86,14 @@ public class User {
 	
 	public void setWebsites(List<Website> websites) {
 		this.websites = websites;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 	
 }
