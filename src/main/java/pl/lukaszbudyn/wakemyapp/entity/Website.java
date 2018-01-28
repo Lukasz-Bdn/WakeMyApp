@@ -27,6 +27,10 @@ public class Website {
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="user_id")
 	private User user;
+	private String startDayOfWeek;
+	private String stopDayOfWeek;
+	private int startHour;
+	private int stopHour;
 	
 	public Website(String name, String stringUrl) {
 		super();
@@ -57,4 +61,45 @@ public class Website {
 	public void setStringUrl(String stringUrl) {
 		this.stringUrl = stringUrl;
 	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public String getStartDayOfWeek() {
+		return startDayOfWeek;
+	}
+
+	public void setStartDayOfWeek(String startDayOfWeek) {
+		this.startDayOfWeek = startDayOfWeek;
+	}
+
+	public String getStopDayOfWeek() {
+		return stopDayOfWeek;
+	}
+
+	public void setStopDayOfWeek(String stopDayOfWeek) {
+		this.stopDayOfWeek = stopDayOfWeek;
+	}
+
+	public int getStartHour() {
+		return startHour;
+	}
+
+	public void setStartHour(int startHour) {
+		this.startHour = startHour;
+	}
+
+	public int getStopHour() {
+		return stopHour;
+	}
+
+	public void setStopHour(int stopHour) {
+		this.stopHour = stopHour;
+	}
+	
 }
