@@ -1,4 +1,4 @@
-package pl.lukaszbudyn.wakemyapp.app;
+package pl.lukaszbudyn.wakemyapp.config;
 
 import javax.sql.DataSource;
 
@@ -28,17 +28,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.authoritiesByUsernameQuery("select email, userRole from users "
 						+ "where email=?");
 	}
-
-//	@Autowired
-//	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
-//		auth.inMemoryAuthentication().withUser("admin").password("admin").authorities("ROLE_USER");
-//	}
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/login", "/register").permitAll()
-			.antMatchers("/location/**", "/manufacturer/**", "/manufacturer/**",
-					"/partcatalog/**", "/user/**")
+			.antMatchers("/user/**")
 			.hasRole("ADMIN").anyRequest().authenticated()
 			.and()
 			.formLogin().loginPage("/login").permitAll()

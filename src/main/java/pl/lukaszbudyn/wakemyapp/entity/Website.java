@@ -32,6 +32,10 @@ public class Website {
 	private int startHour;
 	private int stopHour;
 	
+	public Website() {
+		super();
+	}
+
 	public Website(String name, String stringUrl) {
 		super();
 		this.name = name;
