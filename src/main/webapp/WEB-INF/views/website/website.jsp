@@ -25,6 +25,7 @@
 					<th scope="col">Address</th>
 					<th scope="col">Days</th>
 					<th scope="col">Hours</th>
+					<th scope="col">Menu</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -39,7 +40,7 @@
 							<div class="btn-group">
 								<div class="btn-group">
 									<button type="button" class="btn btn-primary dropdown-toggle"
-										data-toggle="dropdown"></button>
+										data-toggle="dropdown">Actions</button>
 									<div class="dropdown-menu">
 										<a class="dropdown-item"
 											href="${pageContext.request.contextPath}/website/delete/${website.id}">Remove</a> 
@@ -55,7 +56,7 @@
 		</table>
 
 				<hr>
-				<button>Add new website</button>
+				<a href="${pageContext.request.contextPath}/website/add"><button >Add new website</button></a>
 			</div>
 			<%@include file="../jspf/rightnav.jspf"%>
 		</div>
