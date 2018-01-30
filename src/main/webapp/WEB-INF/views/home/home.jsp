@@ -30,7 +30,6 @@
 				<h3>Test</h3>
 				<p>Lorem ipsum...</p>
 			</div>
-			<%@include file="../jspf/rightnav.jspf"%>
 		</div>
 	</div>
 

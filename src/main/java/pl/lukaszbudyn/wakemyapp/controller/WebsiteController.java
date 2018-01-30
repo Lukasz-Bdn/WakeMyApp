@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.lukaszbudyn.wakemyapp.app.LoggedUserService;
 import pl.lukaszbudyn.wakemyapp.app.WebPinger;
-import pl.lukaszbudyn.wakemyapp.app.WebPingerImpl;
 import pl.lukaszbudyn.wakemyapp.entity.User;
 import pl.lukaszbudyn.wakemyapp.entity.Website;
 import pl.lukaszbudyn.wakemyapp.repository.UserRepository;

@@ -42,7 +42,6 @@
 
 
 			</div>
-			<%@include file="../jspf/rightnav.jspf"%>
 		</div>
 	</div>
 

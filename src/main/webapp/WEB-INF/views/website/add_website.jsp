@@ -58,7 +58,6 @@
 				<br />
 
 			</div>
-			<%@include file="../jspf/rightnav.jspf"%>
 		</div>
 	</div>
 	<%@include file="../jspf/footer.jspf"%>

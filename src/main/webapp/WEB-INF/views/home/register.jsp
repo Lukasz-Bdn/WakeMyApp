@@ -52,7 +52,6 @@
 					<c:out value="${msg}"></c:out>
 				</h3>
 			</div>
-			<%@include file="../jspf/rightnav.jspf"%>
 		</div>
 	</div>
 	<%@ include file="../jspf/footer.jspf"%>

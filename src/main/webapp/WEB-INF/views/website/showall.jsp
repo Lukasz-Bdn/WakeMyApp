@@ -25,6 +25,8 @@
 							<th scope="col">Address</th>
 							<th scope="col">Days</th>
 							<th scope="col">Hours</th>
+							<th scope="col">Last ping</th>
+							<th scope="col">Status</th>
 							<th scope="col">User</th>
 							<th scope="col">Menu</th>
 						</tr>
@@ -37,6 +39,8 @@
 								<td><c:out value="${website.daysKeepAwake}" /></td>
 								<td><c:out value="${website.startHour}" />-<c:out
 										value="${website.stopHour}" /></td>
+								<td><c:out value="${website.lastPingDate}" /></td>
+								<td><c:out value="${website.lastPingStatus}" /></td>										
 								<td><c:out value="${website.user.email}" /></td>
 								<td>
 									<div class="dropdown">
@@ -57,7 +61,6 @@
 					</tbody>
 				</table>
 			</div>
-			<%@include file="../jspf/rightnav.jspf"%>
 		</div>
 	</div>
 

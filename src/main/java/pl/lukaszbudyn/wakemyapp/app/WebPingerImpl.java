@@ -3,7 +3,6 @@ package pl.lukaszbudyn.wakemyapp.app;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +29,14 @@ public class WebPingerImpl implements WebPinger {
 			HttpURLConnection connection = (HttpURLConnection) siteUrl.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
-            String pingStatus = connection.getResponseMessage();
+            String pingStatus = connection.getResponseCode() + "(" +connection.getResponseMessage() + ")";
             website.setLastPingStatus(pingStatus);
             website.setLastPingDate(Calendar.getInstance().getTime());
             websiteRepo.save(website);
-            System.out.println("Pinged: " + website.getStringUrl());
+            System.out.println("Pinged: " + website.getStringUrl() + " | " + connection.getResponseCode()
+            		+ " | " + connection.getResponseMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
 }
