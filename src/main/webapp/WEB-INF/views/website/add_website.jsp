@@ -30,29 +30,23 @@
 						<form:errors path="stringUrl" />
 					</div>
 					<div class="form-group">
-						Select day range::
-						<form:select type="text" path="startDayOfWeek"
-							cssClass="form-control">
-							<form:options items="${website.days}"/>
-						</form:select>
-						<form:select type="text" path="stopDayOfWeek"
-							cssClass="form-control">
-							<form:options items="${website.days}"/>
-						</form:select>
+						Select day range:
+
+						<form:checkboxes items="${website.days}" path="daysKeepAwake" />
+
 					</div>
-					
+
 					<div class="form-group">
 						Select hours range::
-						<form:select type="text" path="startHour"
-							cssClass="form-control">
-							<form:options items="${website.hours}"/>
-						</form:select> - 
-						<form:select type="text" path="stopHour"
-							cssClass="form-control">
-							<form:options items="${website.hours}"/>
+						<form:select type="text" path="startHour" cssClass="form-control">
+							<form:options items="${website.hours}" />
+						</form:select>
+						-
+						<form:select type="text" path="stopHour" cssClass="form-control">
+							<form:options items="${website.hours}" />
 						</form:select>
 					</div>
-					
+
 					<input type="submit" class="btn btn-primary"
 						value="Add new website">
 				</form:form>

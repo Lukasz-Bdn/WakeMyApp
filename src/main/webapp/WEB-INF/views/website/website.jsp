@@ -33,7 +33,7 @@
 					<tr class="table-light">
 						<td><c:out value="${website.name}" /></td>
 						<td><c:out value="${website.stringUrl}" /></td>
-						<td><c:out value="${website.startDayOfWeek}" />-<c:out value="${website.stopDayOfWeek}" /></td>
+						<td><c:out value="${website.daysKeepAwake}" /></td>
 						<td><c:out value="${website.startHour}" />-<c:out value="${website.stopHour}" /></td>
 						
 						<td>
