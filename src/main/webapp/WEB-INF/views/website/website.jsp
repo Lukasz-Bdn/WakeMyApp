@@ -43,7 +43,7 @@
 										data-toggle="dropdown">Actions</button>
 									<div class="dropdown-menu">
 										<a class="dropdown-item"
-											href="${pageContext.request.contextPath}/website/delete/${website.id}">Remove</a> 
+											href="${pageContext.request.contextPath}/website/remove/${website.id}">Remove</a> 
 										<a class="dropdown-item"
 											href="${pageContext.request.contextPath}/website/edit/${website.id}">Update</a>
 									</div>

@@ -22,19 +22,19 @@
 					<div class="form-group">
 						Name (any name by which you can identify your website):
 						<form:input path="name" cssClass="form-control" />
-						<form:errors path="name" />
+						<form:errors path="name" cssClass="text-danger"/>
 					</div>
 					<div class="form-group">
 						Http address (needs to be full http or https address, example:
 						https://www.google.com):
 						<form:input path="stringUrl" cssClass="form-control" />
-						<form:errors path="stringUrl" />
+						<form:errors path="stringUrl" cssClass="text-danger"/>
 					</div>
 					<div class="form-group">
 						Select day range: 
 
 						<form:checkboxes items="${website.days}" path="daysKeepAwake" />
-
+						<form:errors path="daysKeepAwake" cssClass="text-danger"/>
 					</div>
 					<div class="form-group">
 						Current server time is
@@ -50,6 +50,7 @@
 							<form:select type="text" path="stopHour" cssClass="form-control">
 								<form:options items="${website.hours}" />
 							</form:select>
+							<form:errors path="startHour" cssClass="text-danger"/>
 					</div>
 					<input type="submit" class="btn btn-primary"
 						value="Add new website">

@@ -16,20 +16,26 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
+import pl.lukaszbudyn.wakemyapp.validator.HoursStartSmallerThanStop;
+
 @Entity
 @Table(name="website")
+@HoursStartSmallerThanStop(startHour="startHour", stopHour="stopHour", 
+	message="Start hour must be before stop hour")
 public class Website {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	long id;
 	@NotNull
-	@NotEmpty
+	@NotEmpty(message="Please choose a name")
 	String name;
+	@NotEmpty
 	@URL
 	String stringUrl;
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="user_id")
 	private User user;
+	@NotEmpty(message="Please make sure you specify at least one day!")
 	private String daysKeepAwake;
 	private int startHour;
 	private int stopHour;

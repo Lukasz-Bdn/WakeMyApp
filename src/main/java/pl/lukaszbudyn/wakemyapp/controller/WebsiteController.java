@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -55,4 +56,27 @@ public class WebsiteController {
 		return "redirect:/website/show";
 	}
 	
+	@GetMapping("edit/{id}")
+	public String editWebsiteGet(@PathVariable long id, Model m) {
+		Website website = websiteRepo.findOne(id);
+		m.addAttribute("website", website);
+		m.addAttribute("currentTime", Calendar.getInstance().getTime().toString());
+		return "website/add_website";
+	}
+	
+	@PostMapping("edit/{id}")
+	public String editWebsitePost(@PathVariable long id, @Valid Website website, BindingResult bindingResult) {
+		if(bindingResult.hasErrors()) {
+			return "website/add_website";
+		}
+		website.setUser(loggedUserService.getLoggedUser());
+		websiteRepo.save(website);
+		return "redirect:/website/show";
+	}
+	
+	@GetMapping("/remove/{id}")
+	public String removeGet(@PathVariable long id) {
+		websiteRepo.delete(id);
+		return "redirect:/website/show";
+	}
 }
