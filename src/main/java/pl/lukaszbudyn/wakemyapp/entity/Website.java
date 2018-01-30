@@ -30,8 +30,7 @@ public class Website {
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="user_id")
 	private User user;
-	private String startDayOfWeek;
-	private String stopDayOfWeek;
+	private String daysKeepAwake;
 	private int startHour;
 	private int stopHour;
 	
@@ -77,22 +76,6 @@ public class Website {
 		this.user = user;
 	}
 
-	public String getStartDayOfWeek() {
-		return startDayOfWeek;
-	}
-
-	public void setStartDayOfWeek(String startDayOfWeek) {
-		this.startDayOfWeek = startDayOfWeek;
-	}
-
-	public String getStopDayOfWeek() {
-		return stopDayOfWeek;
-	}
-
-	public void setStopDayOfWeek(String stopDayOfWeek) {
-		this.stopDayOfWeek = stopDayOfWeek;
-	}
-
 	public int getStartHour() {
 		return startHour;
 	}
@@ -109,6 +92,14 @@ public class Website {
 		this.stopHour = stopHour;
 	}
 	
+	public String getDaysKeepAwake() {
+		return daysKeepAwake;
+	}
+
+	public void setDaysKeepAwake(String daysKeepAwake) {
+		this.daysKeepAwake = daysKeepAwake;
+	}
+
 	public List<String> getDays() {
 		List<String> days = Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
 		return days;

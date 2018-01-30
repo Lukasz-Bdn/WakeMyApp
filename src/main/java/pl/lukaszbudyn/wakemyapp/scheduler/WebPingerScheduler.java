@@ -1,5 +1,11 @@
 package pl.lukaszbudyn.wakemyapp.scheduler;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -16,12 +22,28 @@ public class WebPingerScheduler {
 	@Autowired
 	WebsiteRepository websiteRepo;
 	
-	@Scheduled(cron="0 1 * * * ?")
+	@Scheduled(cron="* 5 * * * ?")
 	public void pingEvery29Minutes() {
-//		List<Website> websites = websiteRepo.findAll();
-//		webPinger.pingAllWebsites(websites);
-		Website website = new Website("heroku", "https://spare-part-mgr.herokuapp.com/");
-		webPinger.pingOneWebsite(website);
+		List<Website> websites = getWebsitesToPing();
+		webPinger.pingAllWebsites(websites);
 	}
 	
+	private List<Website> getWebsitesToPing() {
+		String currentDay = getCurrentDay();
+		List<Website> websites = websiteRepo.findWebsitesForToday(currentDay);
+		return websites;
+	}
+
+	public String getCurrentDay() {
+		Calendar rightNow = Calendar.getInstance();
+		Date date = rightNow.getTime();
+		String currentDay = new SimpleDateFormat("EE", Locale.ENGLISH).format(date.getTime());
+		return currentDay;
+	}
+	
+	public int getCurrentHour() {
+		Calendar rightNow = Calendar.getInstance();
+		int hourNow = rightNow.get(Calendar.HOUR_OF_DAY);
+		return hourNow;
+	}
 }

@@ -32,7 +32,7 @@ public class WebsiteController {
 	@GetMapping("/show")
 	public String showUserWebsites(Model m) {
 		User loggedUser = loggedUserService.getLoggedUser();
-		List<Website> userWebsites = loggedUser.getWebsites();
+		List<Website> userWebsites = websiteRepo.findWebsitesForToday("Tue");
 		m.addAttribute("userWebsites", userWebsites);
 		return "/website/website";
 	}

@@ -25,6 +25,7 @@ public class WebPingerImpl implements WebPinger {
             connection.setRequestMethod("GET");
             connection.connect();
             connection.getResponseCode();
+            System.out.println("Pinged: " + website.getStringUrl());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
