@@ -1,6 +1,7 @@
 package pl.lukaszbudyn.wakemyapp.entity;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -39,6 +40,8 @@ public class Website {
 	private String daysKeepAwake;
 	private int startHour;
 	private int stopHour;
+	private Date lastPingDate;
+	private String lastPingStatus;
 	
 	public Website() {
 		super();
@@ -50,6 +53,16 @@ public class Website {
 		this.stringUrl = stringUrl;
 	}
 	
+	public List<String> getDays() {
+		List<String> days = Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
+		return days;
+	}
+	
+	public List<Integer> getHours() {
+		List<Integer> hours = Arrays.asList(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23);
+		return hours;
+	}
+
 	public long getId() {
 		return id;
 	}
@@ -106,13 +119,20 @@ public class Website {
 		this.daysKeepAwake = daysKeepAwake;
 	}
 
-	public List<String> getDays() {
-		List<String> days = Arrays.asList("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun");
-		return days;
+	public Date getLastPingDate() {
+		return lastPingDate;
 	}
-	
-	public List<Integer> getHours() {
-		List<Integer> hours = Arrays.asList(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23);
-		return hours;
+
+	public void setLastPingDate(Date lastPingDate) {
+		this.lastPingDate = lastPingDate;
 	}
+
+	public String getLastPingStatus() {
+		return lastPingStatus;
+	}
+
+	public void setLastPingStatus(String lastPingStatus) {
+		this.lastPingStatus = lastPingStatus;
+	}
+
 }

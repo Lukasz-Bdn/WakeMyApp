@@ -99,5 +99,13 @@ public class User {
 	public int getNumWebsites() {
 		return this.websites.size();
 	}
+
+	public void toggleDisableEnable() {
+		if(this.isEnabled()) {
+			this.setEnabled(false);
+		} else {
+			this.setEnabled(true);
+		}
+	}
 	
 }

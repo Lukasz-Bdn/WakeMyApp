@@ -44,7 +44,7 @@
 										</button>
 										<ul class="dropdown-menu">
 											<li><a
-												href="${pageContext.request.contextPath}/user/edit/${user.id}">Edit</a></li>
+												href="${pageContext.request.contextPath}/user/toggleenable/${user.id}">Enable/disable</a></li>
 										</ul>
 									</div>
 

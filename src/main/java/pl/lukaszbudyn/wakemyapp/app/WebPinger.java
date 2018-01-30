@@ -9,5 +9,5 @@ import pl.lukaszbudyn.wakemyapp.entity.Website;
 @Component
 public interface WebPinger {
 	public void pingAllWebsites(List<Website> websites);
-	public void pingOneWebsite(Website website);
+	public void pingOneWebsiteAndUpdateStatus(Website website);
 }

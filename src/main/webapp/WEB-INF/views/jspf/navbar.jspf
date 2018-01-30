@@ -13,8 +13,12 @@
 				<li><a href="${pageContext.request.contextPath}/">Home</a></li>
 				<li><a href="${pageContext.request.contextPath}/website/show">Your
 						websites</a></li>
-				<li><a href="${pageContext.request.contextPath}/user/all">All users</a></li>
-				<li><a href="${pageContext.request.contextPath}/website/all">All websites</a></li>
+				<sec:authorize access="hasRole('ADMIN')">
+					<li><a href="${pageContext.request.contextPath}/user/all">All
+							users</a></li>
+					<li><a href="${pageContext.request.contextPath}/website/all">All
+							websites</a></li>
+				</sec:authorize>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<sec:authorize access="isAnonymous()">
