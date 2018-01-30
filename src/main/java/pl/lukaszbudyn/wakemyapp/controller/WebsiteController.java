@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.lukaszbudyn.wakemyapp.app.LoggedUserService;
+import pl.lukaszbudyn.wakemyapp.app.WebPinger;
+import pl.lukaszbudyn.wakemyapp.app.WebPingerImpl;
 import pl.lukaszbudyn.wakemyapp.entity.User;
 import pl.lukaszbudyn.wakemyapp.entity.Website;
 import pl.lukaszbudyn.wakemyapp.repository.UserRepository;
@@ -30,6 +32,8 @@ public class WebsiteController {
 	WebsiteRepository websiteRepo;
 	@Autowired
 	LoggedUserService loggedUserService;
+	@Autowired
+	WebPinger webPinger;
 	
 	@GetMapping("/show")
 	public String showUserWebsites(Model m) {
@@ -87,4 +91,11 @@ public class WebsiteController {
 		return "website/showall";
 	}
 	
+	@GetMapping("/testping/{id}")
+	public String testPing(@PathVariable long id) {
+		Website website = websiteRepo.findOne(id);
+		webPinger.pingOneWebsiteAndUpdateStatus(website);
+		websiteRepo.save(website);
+		return "redirect:/website/show";
+	}
 }

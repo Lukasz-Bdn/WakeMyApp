@@ -45,6 +45,8 @@
 										</button>
 										<ul class="dropdown-menu">
 											<li><a
+												href="${pageContext.request.contextPath}/website/testping/${website.id}">Test ping now</a></li>
+											<li><a
 												href="${pageContext.request.contextPath}/website/edit/${website.id}">Edit</a></li>
 											<li><a
 												href="${pageContext.request.contextPath}/website/remove/${website.id}">Delete</a></li>
