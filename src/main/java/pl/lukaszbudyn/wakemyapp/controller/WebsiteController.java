@@ -1,5 +1,6 @@
 package pl.lukaszbudyn.wakemyapp.controller;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -32,7 +33,7 @@ public class WebsiteController {
 	@GetMapping("/show")
 	public String showUserWebsites(Model m) {
 		User loggedUser = loggedUserService.getLoggedUser();
-		List<Website> userWebsites = websiteRepo.findWebsitesForToday("Tue");
+		List<Website> userWebsites = websiteRepo.findWebsitesToPingNow("Tue", 15);
 		m.addAttribute("userWebsites", userWebsites);
 		return "/website/website";
 	}
@@ -40,6 +41,7 @@ public class WebsiteController {
 	@GetMapping("/add")
 	public String addWebsiteGet(Model m) {
 		m.addAttribute("website", new Website());
+		m.addAttribute("currentTime", Calendar.getInstance().getTime().toString());
 		return "website/add_website";
 	}
 	

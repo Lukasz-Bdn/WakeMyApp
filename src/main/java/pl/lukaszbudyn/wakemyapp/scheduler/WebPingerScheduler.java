@@ -22,7 +22,7 @@ public class WebPingerScheduler {
 	@Autowired
 	WebsiteRepository websiteRepo;
 	
-	@Scheduled(cron="* 5 * * * ?")
+	@Scheduled(cron="0 0/5 * * * ?")
 	public void pingEvery29Minutes() {
 		List<Website> websites = getWebsitesToPing();
 		webPinger.pingAllWebsites(websites);
@@ -30,7 +30,8 @@ public class WebPingerScheduler {
 	
 	private List<Website> getWebsitesToPing() {
 		String currentDay = getCurrentDay();
-		List<Website> websites = websiteRepo.findWebsitesForToday(currentDay);
+		int currentHour = getCurrentHour();
+		List<Website> websites = websiteRepo.findWebsitesToPingNow(currentDay, currentHour);
 		return websites;
 	}
 

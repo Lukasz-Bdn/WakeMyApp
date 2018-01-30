@@ -25,28 +25,32 @@
 						<form:errors path="name" />
 					</div>
 					<div class="form-group">
-						Http address (needs to be full http/https address):
+						Http address (needs to be full http or https address, example:
+						https://www.google.com):
 						<form:input path="stringUrl" cssClass="form-control" />
 						<form:errors path="stringUrl" />
 					</div>
 					<div class="form-group">
-						Select day range:
+						Select day range: 
 
 						<form:checkboxes items="${website.days}" path="daysKeepAwake" />
 
 					</div>
-
 					<div class="form-group">
-						Select hours range::
-						<form:select type="text" path="startHour" cssClass="form-control">
-							<form:options items="${website.hours}" />
-						</form:select>
-						-
-						<form:select type="text" path="stopHour" cssClass="form-control">
-							<form:options items="${website.hours}" />
-						</form:select>
+						Current server time is
+						<c:out value="${currentTime}" />
+						, please select hours accordingly:
 					</div>
 
+					<div class="form-group">
+							<form:select type="text" path="startHour" cssClass="form-control">
+								<form:options items="${website.hours}" />
+							</form:select>
+							-
+							<form:select type="text" path="stopHour" cssClass="form-control">
+								<form:options items="${website.hours}" />
+							</form:select>
+					</div>
 					<input type="submit" class="btn btn-primary"
 						value="Add new website">
 				</form:form>
