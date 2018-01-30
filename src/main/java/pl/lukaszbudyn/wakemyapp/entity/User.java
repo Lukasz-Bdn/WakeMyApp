@@ -96,4 +96,8 @@ public class User {
 		this.confirmPassword = confirmPassword;
 	}
 	
+	public int getNumWebsites() {
+		return this.websites.size();
+	}
+	
 }

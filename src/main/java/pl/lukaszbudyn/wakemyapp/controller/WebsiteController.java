@@ -34,7 +34,7 @@ public class WebsiteController {
 	@GetMapping("/show")
 	public String showUserWebsites(Model m) {
 		User loggedUser = loggedUserService.getLoggedUser();
-		List<Website> userWebsites = websiteRepo.findWebsitesToPingNow("Tue", 15);
+		List<Website> userWebsites = websiteRepo.findAllByUser(loggedUser);
 		m.addAttribute("userWebsites", userWebsites);
 		return "/website/website";
 	}
@@ -79,4 +79,12 @@ public class WebsiteController {
 		websiteRepo.delete(id);
 		return "redirect:/website/show";
 	}
+	
+	@GetMapping("/all")
+	public String showAll(Model m) {
+		List<Website> websites = websiteRepo.findAll();
+		m.addAttribute("websites", websites);
+		return "website/showall";
+	}
+	
 }

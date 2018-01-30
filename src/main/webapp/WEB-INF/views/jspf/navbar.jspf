@@ -1,25 +1,36 @@
 <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="${pageContext.request.contextPath}/">WakeMyApp</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="${pageContext.request.contextPath}/">Home</a></li>
-        <li><a href="${pageContext.request.contextPath}/website/show">Your websites</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="${pageContext.request.contextPath}/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        <li><a href="${pageContext.request.contextPath}/register"><span class="glyphicon glyphicon-register"></span> Register</a></li>
-        <li><a href="${pageContext.request.contextPath}/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-      </ul>
-    </div>
-  </div>
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#myNavbar">
+				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="${pageContext.request.contextPath}/">WakeMyApp</a>
+		</div>
+		<div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+				<li><a href="${pageContext.request.contextPath}/">Home</a></li>
+				<li><a href="${pageContext.request.contextPath}/website/show">Your
+						websites</a></li>
+				<li><a href="${pageContext.request.contextPath}/user/all">All users</a></li>
+				<li><a href="${pageContext.request.contextPath}/website/all">All websites</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<sec:authorize access="isAnonymous()">
+					<li><a href="${pageContext.request.contextPath}/login"> <span
+							class="glyphicon glyphicon-log-in"></span> Login
+					</a></li>
+					<li><a href="${pageContext.request.contextPath}/register">
+							<span class="glyphicon glyphicon-register"></span> Register
+					</a></li>
+				</sec:authorize>
+				<sec:authorize access="isAuthenticated()">
+					<li><a href="${pageContext.request.contextPath}/logout"> <span
+							class="glyphicon glyphicon-log-out"></span> Logout
+					</a></li>
+				</sec:authorize>
+			</ul>
+		</div>
+	</div>
 </nav>

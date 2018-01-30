@@ -16,7 +16,7 @@
 		<div class="row content">
 			<%@include file="../jspf/leftnav.jspf"%>
 			<div class="col-sm-8 text-left">
-				<h1>Your websites:</h1>
+				<h1>All websites:</h1>
 
 				<table class="table table-bordered table-hover">
 					<thead>
@@ -25,18 +25,19 @@
 							<th scope="col">Address</th>
 							<th scope="col">Days</th>
 							<th scope="col">Hours</th>
+							<th scope="col">User</th>
 							<th scope="col">Menu</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${userWebsites}" var="website">
+						<c:forEach items="${websites}" var="website">
 							<tr class="table-light">
 								<td><c:out value="${website.name}" /></td>
 								<td><c:out value="${website.stringUrl}" /></td>
 								<td><c:out value="${website.daysKeepAwake}" /></td>
 								<td><c:out value="${website.startHour}" />-<c:out
 										value="${website.stopHour}" /></td>
-
+								<td><c:out value="${website.user.email}" /></td>
 								<td>
 									<div class="dropdown">
 										<button class="btn btn-primary dropdown-toggle" type="button"
@@ -55,11 +56,6 @@
 						</c:forEach>
 					</tbody>
 				</table>
-
-				<hr>
-
-				<a href="${pageContext.request.contextPath}/website/add"
-					class="btn btn-primary" role="button">Add new website</a>
 			</div>
 			<%@include file="../jspf/rightnav.jspf"%>
 		</div>

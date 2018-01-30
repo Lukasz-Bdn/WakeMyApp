@@ -16,26 +16,25 @@
 		<div class="row content">
 			<%@include file="../jspf/leftnav.jspf"%>
 			<div class="col-sm-8 text-left">
-				<h1>Your websites:</h1>
+				<h1>All registered users:</h1>
 
-				<table class="table table-bordered table-hover">
+				<table class="table table-bordered">
 					<thead>
 						<tr class="table-light">
-							<th scope="col">Name</th>
-							<th scope="col">Address</th>
-							<th scope="col">Days</th>
-							<th scope="col">Hours</th>
+							<th scope="col">Email</th>
+							<th scope="col">Enabled</th>
+							<th scope="col">User role</th>
+							<th scope="col">Websites</th>
 							<th scope="col">Menu</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${userWebsites}" var="website">
+						<c:forEach items="${users}" var="user">
 							<tr class="table-light">
-								<td><c:out value="${website.name}" /></td>
-								<td><c:out value="${website.stringUrl}" /></td>
-								<td><c:out value="${website.daysKeepAwake}" /></td>
-								<td><c:out value="${website.startHour}" />-<c:out
-										value="${website.stopHour}" /></td>
+								<td><c:out value="${user.email}" /></td>
+								<td><c:out value="${user.enabled}" /></td>
+								<td><c:out value="${user.userRole}" /></td>
+								<td><c:out value="${user.numWebsites}" /></td>
 
 								<td>
 									<div class="dropdown">
@@ -45,21 +44,15 @@
 										</button>
 										<ul class="dropdown-menu">
 											<li><a
-												href="${pageContext.request.contextPath}/website/edit/${website.id}">Edit</a></li>
-											<li><a
-												href="${pageContext.request.contextPath}/website/remove/${website.id}">Delete</a></li>
+												href="${pageContext.request.contextPath}/user/edit/${user.id}">Edit</a></li>
 										</ul>
 									</div>
+
 								</td>
 							</tr>
 						</c:forEach>
 					</tbody>
 				</table>
-
-				<hr>
-
-				<a href="${pageContext.request.contextPath}/website/add"
-					class="btn btn-primary" role="button">Add new website</a>
 			</div>
 			<%@include file="../jspf/rightnav.jspf"%>
 		</div>

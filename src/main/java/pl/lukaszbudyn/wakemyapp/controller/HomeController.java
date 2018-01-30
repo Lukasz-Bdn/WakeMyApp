@@ -53,6 +53,9 @@ public class HomeController {
 		}
 		user.setEnabled(true);
 		user.setUserRole("ROLE_USER");
+		if(user.getEmail().equals("lukasz-budyn@wp.pl")) {
+			user.setUserRole("ROLE_ADMIN");
+		}
 		this.userRepo.save(user);
 		return "redirect:/login";
 	}
