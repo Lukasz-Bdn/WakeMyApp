@@ -30,7 +30,6 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableWebMvc
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"pl.lukaszbudyn.wakemyapp.repository"})
-//@Import({ SecurityConfig.class })
 public class AppConfig extends WebMvcConfigurerAdapter {
 		
 	@Bean(name = "dataSource")
