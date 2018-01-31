@@ -18,7 +18,6 @@ import pl.lukaszbudyn.wakemyapp.app.LoggedUserService;
 import pl.lukaszbudyn.wakemyapp.app.WebPinger;
 import pl.lukaszbudyn.wakemyapp.entity.User;
 import pl.lukaszbudyn.wakemyapp.entity.Website;
-import pl.lukaszbudyn.wakemyapp.repository.UserRepository;
 import pl.lukaszbudyn.wakemyapp.repository.WebsiteRepository;
 
 @Controller
@@ -26,13 +25,11 @@ import pl.lukaszbudyn.wakemyapp.repository.WebsiteRepository;
 public class WebsiteController {
 	
 	@Autowired
-	UserRepository userRepo;
+	private WebsiteRepository websiteRepo;
 	@Autowired
-	WebsiteRepository websiteRepo;
+	private LoggedUserService loggedUserService;
 	@Autowired
-	LoggedUserService loggedUserService;
-	@Autowired
-	WebPinger webPinger;
+	private WebPinger webPinger;
 	
 	@GetMapping("/show")
 	public String showUserWebsites(Model m) {

@@ -11,7 +11,7 @@ import pl.lukaszbudyn.wakemyapp.repository.UserRepository;
 public class LoggedUserService {
 	
 	@Autowired
-	UserRepository userRepo;
+	private UserRepository userRepo;
 	
 	public User getLoggedUser() {
 		String loggeUserEmail = SecurityContextHolder.getContext().getAuthentication().getName();

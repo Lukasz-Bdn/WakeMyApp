@@ -17,7 +17,7 @@ import pl.lukaszbudyn.wakemyapp.repository.UserRepository;
 public class UserController {
 	
 	@Autowired
-	UserRepository userRepo;
+	private UserRepository userRepo;
 
 	@GetMapping("/all")
 	public String userAll(Model m) {

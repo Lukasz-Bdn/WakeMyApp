@@ -18,9 +18,9 @@ import pl.lukaszbudyn.wakemyapp.repository.WebsiteRepository;
 public class WebPingerScheduler {
 
 	@Autowired
-	WebPinger webPinger;
+	private WebPinger webPinger;
 	@Autowired
-	WebsiteRepository websiteRepo;
+	private WebsiteRepository websiteRepo;
 	
 	@Scheduled(cron="0 0/20 * * * ?")
 	public void pingEvery29Minutes() {

@@ -14,7 +14,7 @@ import pl.lukaszbudyn.wakemyapp.repository.WebsiteRepository;
 @Component
 public class WebPingerImpl implements WebPinger {
 	@Autowired
-	WebsiteRepository websiteRepo;
+	private WebsiteRepository websiteRepo;
 	 
 	@Override
 	public void pingAllWebsites(List<Website> websites) {

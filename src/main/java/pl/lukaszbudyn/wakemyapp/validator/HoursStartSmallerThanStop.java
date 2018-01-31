@@ -19,10 +19,4 @@ public @interface HoursStartSmallerThanStop {
 	
 	Class<?>[] groups() default {};
 	Class<?>[] payload() default {};
-	
-//	@Target({ ElementType.TYPE })
-//	@Retention(RetentionPolicy.RUNTIME)
-//	@interface List {
-//		HoursStartSmallerThanStop[] value();
-//		}
 }

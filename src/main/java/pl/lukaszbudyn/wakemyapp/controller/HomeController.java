@@ -18,7 +18,7 @@ import pl.lukaszbudyn.wakemyapp.repository.UserRepository;
 public class HomeController {
 	
 	@Autowired
-	UserRepository userRepo;
+	private UserRepository userRepo;
 	
 	@GetMapping("/")
 	public String home() {
