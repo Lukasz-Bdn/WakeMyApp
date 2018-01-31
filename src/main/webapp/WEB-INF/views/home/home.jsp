@@ -24,7 +24,7 @@
 				<p>For example: 
 				
 				<ul>
-				<li>if you are job hunting and want your apps to always be ready for recruiters. you can keep them awake, 
+				<li>If you are job hunting and want your apps to always be ready for recruiters. you can keep them awake, 
 				from Monday to Friday between 9 am and 6 pm.</li>
 				<li>If you know you want to present an app to someone at given time, you can make sure it will be
 				available at that time, without delay.</li>

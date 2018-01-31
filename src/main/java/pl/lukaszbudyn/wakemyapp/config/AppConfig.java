@@ -1,5 +1,7 @@
 package pl.lukaszbudyn.wakemyapp.config;
 
+import java.util.Properties;
+
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;
 
@@ -52,6 +54,14 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	    driverManagerDataSource.setUrl("jdbc:mysql://localhost:3306/wakemyapp");
 	    driverManagerDataSource.setUsername("root");
 	    driverManagerDataSource.setPassword("coderslab");
+		
+	    String dbUrl = System.getenv("JDBC_DATABASE_URL");
+		if(dbUrl!=null) {
+			driverManagerDataSource.setDriverClassName("org.postgresql.Driver");
+			driverManagerDataSource.setUrl(dbUrl);
+			driverManagerDataSource.setUsername(System.getenv("JDBC_DATABASE_USERNAME"));
+			driverManagerDataSource.setPassword(System.getenv("JDBC_DATABASE_PASSWORD"));
+		}
 	    return driverManagerDataSource;
 	}
 	
@@ -79,6 +89,17 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public LocalEntityManagerFactoryBean entityManagerFactory() {
 		LocalEntityManagerFactoryBean emfb = new LocalEntityManagerFactoryBean();
 		emfb.setPersistenceUnitName("wakemyapp");
+		String dbUrl = System.getenv("JDBC_DATABASE_URL");
+		if(dbUrl!=null) {
+			Properties jpaProperties = new Properties();
+			jpaProperties.put("javax.persistence.jdbc.url", System.getenv("JDBC_DATABASE_URL"));
+			jpaProperties.put("javax.persistence.jdbc.user", System.getenv("JDBC_DATABASE_USERNAME"));
+			jpaProperties.put("javax.persistence.jdbc.password", System.getenv("JDBC_DATABASE_PASSWORD"));
+			jpaProperties.put("javax.persistence.jdbc.driver", "org.postgresql.Driver");
+			jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+			emfb.setJpaProperties(jpaProperties);
+			emfb.afterPropertiesSet();
+		}
 		return emfb;
 	}
 

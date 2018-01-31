@@ -1,1 +1,10 @@
-<div class="col-sm-2 sidenav">Current number of users:</div>
+<div class="col-sm-2 sidenav">
+
+<p>Current number of users:</p>
+<p><c:out value="${numOfUsers}"/></p>
+
+<p>Current number of websites:</p>
+<p><c:out value="${numOfWebsites}"/></p>
+
+
+</div>

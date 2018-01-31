@@ -22,7 +22,7 @@ public class WebPingerScheduler {
 	@Autowired
 	WebsiteRepository websiteRepo;
 	
-	@Scheduled(cron="0 0/5 * * * ?")
+	@Scheduled(cron="0 0/20 * * * ?")
 	public void pingEvery29Minutes() {
 		List<Website> websites = getWebsitesToPing();
 		webPinger.pingAllWebsites(websites);

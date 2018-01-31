@@ -29,7 +29,7 @@ public class WebPingerImpl implements WebPinger {
 			HttpURLConnection connection = (HttpURLConnection) siteUrl.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
-            String pingStatus = connection.getResponseCode() + "(message: " +connection.getResponseMessage() + ")";
+            String pingStatus = connection.getResponseCode() + " (message: " +connection.getResponseMessage() + ")";
             website.setLastPingStatus(pingStatus);
             website.setLastPingDate(Calendar.getInstance().getTime());
             websiteRepo.save(website);
