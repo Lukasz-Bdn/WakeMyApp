@@ -32,21 +32,7 @@ import org.springframework.web.servlet.view.JstlView;
 @EnableJpaRepositories(basePackages = {"pl.lukaszbudyn.wakemyapp.repository"})
 //@Import({ SecurityConfig.class })
 public class AppConfig extends WebMvcConfigurerAdapter {
-	
-//	@Value("${spring.datasource.url}")
-//	private String dbUrl;
-	
-//	@Bean
-//	public DataSource dataSource() throws SQLException {
-//		if (dbUrl == null || dbUrl.isEmpty()) {
-//			return new HikariDataSource();
-//		} else {
-//			HikariConfig config = new HikariConfig();
-//			config.setJdbcUrl(dbUrl);
-//			return new HikariDataSource(config);
-//		}
-//	}
-	
+		
 	@Bean(name = "dataSource")
 	public DriverManagerDataSource dataSource() {
 	    DriverManagerDataSource driverManagerDataSource = new DriverManagerDataSource();
