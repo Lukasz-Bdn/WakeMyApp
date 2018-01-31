@@ -24,7 +24,7 @@
 				<p>For example: 
 				
 				<ul>
-				<li>If you are job hunting and want your apps to always be ready for recruiters. you can keep them awake, 
+				<li>If you are job hunting and want your apps to always be ready for recruiters, you can keep them awake, 
 				from Monday to Friday between 9 am and 6 pm.</li>
 				<li>If you know you want to present an app to someone at given time, you can make sure it will be
 				available at that time, without delay.</li>
@@ -35,7 +35,7 @@
 				<ol>
 					<li>Use the register button above and create new account. If you already have account log in.</li>
 					<li>After logging in go to 'Your websites' menu.</li>
-					<li>Click 'Add new website' button, provide address and time, when you want you application to be awake.</li>
+					<li>Click 'Add new website' button, provide address and time, when you want your application to be awake.</li>
 					<li>Use the menu button to select 'Test ping now' option. 
 						This will send 'GET' request to your web and return status.</li>
 					<li>Status 200 means OK, if status of your response is different, check 
