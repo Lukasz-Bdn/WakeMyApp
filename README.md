@@ -2,7 +2,7 @@
 
 This application is deployed on <a href="https://wakemyapp.herokuapp.com/">https://wakemyapp.herokuapp.com/</a>
 
-Heroku is a great platform, where anyone can easily deploy their application for free. There is only one downside: each application running on free dyno will go to sleep after 30 minutes of inactivity and every application needs to sleep for at least 6h per day. Next activity will "wake up" the application, but it can take 15-30. This can be enough for someone to assume website is not working and give up. Not ideal if this app is, for example, a part of your programming portfolio...
+Heroku is a great platform, where anyone can easily deploy their application for free. There is only one downside: each application running on free dyno will go to sleep after 30 minutes of inactivity and every application needs to sleep for at least 6h per day. Next activity will "wake up" the application, but it can take 15-45 seconds. This can be enough for someone to assume website is not working and give up. Not ideal if this app is, for example, a part of your programming portfolio...
 
 WakeMyApp application is providing an easy and convenient solution to that:
 
