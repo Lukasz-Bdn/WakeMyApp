@@ -1,5 +1,6 @@
 <footer class="footer">
 	<div class="container">
-		<span class="text-muted">@Lukasz Budyn (2018), lukaszbudyn.pl</span>
+		<span class="text-muted"><span class="glyphicon glyphicon-copyright-mark"></span> 2018
+		Lukasz Budyn, lukaszbudyn.pl</span>
 	</div>
 </footer>

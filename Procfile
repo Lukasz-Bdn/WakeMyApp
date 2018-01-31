@@ -1,0 +1,1 @@
+web: java -jar target/WakeMyApp-1.0.jar
