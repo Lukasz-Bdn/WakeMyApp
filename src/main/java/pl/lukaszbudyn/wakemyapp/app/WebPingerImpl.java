@@ -29,12 +29,10 @@ public class WebPingerImpl implements WebPinger {
 			HttpURLConnection connection = (HttpURLConnection) siteUrl.openConnection();
             connection.setRequestMethod("GET");
             connection.connect();
-            String pingStatus = connection.getResponseCode() + "(" +connection.getResponseMessage() + ")";
+            String pingStatus = connection.getResponseCode() + "(message: " +connection.getResponseMessage() + ")";
             website.setLastPingStatus(pingStatus);
             website.setLastPingDate(Calendar.getInstance().getTime());
             websiteRepo.save(website);
-            System.out.println("Pinged: " + website.getStringUrl() + " | " + connection.getResponseCode()
-            		+ " | " + connection.getResponseMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

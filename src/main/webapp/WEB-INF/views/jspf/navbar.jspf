@@ -26,7 +26,7 @@
 							class="glyphicon glyphicon-log-in"></span> Login
 					</a></li>
 					<li><a href="${pageContext.request.contextPath}/register">
-							<span class="glyphicon glyphicon-register"></span> Register
+							<span class="glyphicon glyphicon-registration-mark"></span> Register
 					</a></li>
 				</sec:authorize>
 				<sec:authorize access="isAuthenticated()">
