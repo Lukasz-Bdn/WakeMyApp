@@ -31,7 +31,7 @@
 				</ul>
 				</p>
 				<hr>
-				<h3>How to use it in 3 simple steps:</h3>
+				<h3>How to use it in 5 simple steps:</h3>
 				<ol>
 					<li>Use the register button above and create new account. If you already have account log in.</li>
 					<li>After logging in go to 'Your websites' menu.</li>
