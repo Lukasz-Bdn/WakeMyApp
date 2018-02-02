@@ -25,6 +25,7 @@ public class User {
 	private long id;
 	@Email
 	@Column(unique=true)
+	@NotEmpty
 	private String email;
 	@NotNull
 	@NotEmpty
